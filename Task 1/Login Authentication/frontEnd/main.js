@@ -25,24 +25,24 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
     console.log('Email:', email);
     console.log('Password:', password);
-
+    window.location.href = "success.html";
     // Send these values to your backend
-    fetch('/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            email: email,
-            password: password
-        })
-    }).then(response => {
-        if (response.ok) {
-            window.location.href = "success.html"; // Redirect to success page
-        } else {
-            throw new Error('Error: ' + response.statusText);
-        }
-    }).catch(error => {
-        console.error('Error:', error);
-    });
+    // fetch('/login', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //         email: email,
+    //         password: password
+    //     })
+    // }).then(response => {
+    //     if (response.ok) {
+    //         window.location.href = "success.html"; // Redirect to success page
+    //     } else {
+    //         throw new Error('Error: ' + response.statusText);
+    //     }
+    // }).catch(error => {
+    //     console.error('Error:', error);
+    // });
 });
